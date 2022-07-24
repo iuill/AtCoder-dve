@@ -6,16 +6,36 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "-std=c++14",
+                "-std=c++17",
                 "-g",
                 "${relativeFile}",
                 "-o",
-                "a.out"
+                "${fileDirname}/a.out"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": true
             }
-        }
+        },
+        {
+            "label": "CheckTestCase",
+            "type": "shell",
+            "command": "cd ${fileDirname} && rm -f ${fileDirname}/${fileBasenameNoExtension} && g++ -std=gnu++17 ${fileBasename} -o a.out && oj test -c \"${fileDirname}/a.out\" -d ${fileDirname}/tests/",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+            }
+        },
+        {
+            "label": "SubmitCode",
+            "type": "shell",
+            "command": "cd ${fileDirname} && acc s ${fileBasename}",
+            "presentation": {
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+            }
+        },
     ]
 }
