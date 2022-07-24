@@ -16,7 +16,7 @@ from string import ascii_lowercase
 
 # main
 def main():
-    
+    print("")
 
 # エントリポイント
 if __name__ == '__main__':
