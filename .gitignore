@@ -333,3 +333,6 @@ ASALocalRun/
 *.out
 
 .DS_Store
+
+# custom
+contest/*/

@@ -40,6 +40,49 @@ Some things to try:
    - Press <kbd>F5</kbd> to launch the app in the container.
    - Once the breakpoint is hit, try hovering over variables, examining locals, and more.
 
+
+## atcoder-cli 事前設定
+
+ref:
+- https://qiita.com/gomatofu/items/1adae9b7cd79b0f8044f
+- https://qiita.com/YUM_3/items/6910b9d14ea544d643f3
+
+/workspaces/AtCoder-dve で作業
+
+1. 以下のコマンドを実行し、AtCoderログイン設定  
+   `$ add login`
+1. 以下のコマンド実行し、再びAtCoderアカウント入力  
+   `$ oj login https://beta.atcoder.jp/`
+1. 全問インストールする設定にする  
+   `$ acc config default-task-choice all`
+1. テンプレート設定用フォルダ確認  
+   ``$ ls -l `acc config-dir` ``
+1. テンプレート設定のコピー  
+   ``$ cp -r ./config/. `acc config-dir` `` 
+1. テンプレート設定用フォルダ配下にコピーされていること確認  
+   ``$ ls -l `acc config-dir` ``
+1. デフォルトテンプレートの設定  
+   `$ acc config default-template cpp`
+
+## コンテスト参加時
+
+1. カレントディレクトリ移動  
+   `$ cd contest`
+   - ディレクトリは /workspaces/AtCoder-dve/contest となる想定
+1. 問題の取得
+   `$ acc new コンテストID`
+   - 例: `$ acc new abc123`
+1. フォルダ移動  
+   `$ cd コンテストID`
+   - 例: `$ cd abc123`
+1. main.cppを開いてコーディング
+1. コンパイルし、a.outを生成する
+1. テスト  
+   `oj t -d ./tests/`
+   - スクリプト言語の場合は `oj t -c "pypy3 main.py" -d ./tests/` のようになる
+1. 提出
+   `acc s main.cpp`
+
 ## Contributing
 
 This project welcomes contributions and suggestions. Most contributions require you to agree to a
