@@ -8,8 +8,14 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     pypy3 \
     nodejs \
     npm \
+    locales-all \
     && pip3 install online-judge-tools \
     && npm install -g atcoder-cli \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf ~/.cache/pip \
     && npm cache clean --force
+
+ENV LANG ja_JP.UTF-8
+ENV LANGUAGE ja_JP:ja
+ENV LC_ALL ja_JP.UTF-8
+ENV TZ=Asia/Tokyo
