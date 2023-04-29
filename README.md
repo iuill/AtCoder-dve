@@ -49,20 +49,32 @@ ref:
 
 /workspaces/atcoder_cpp で作業
 
-1. 以下のコマンドを実行し、AtCoderログイン設定  
-   `$ add login`
-1. 以下のコマンド実行し、再びAtCoderアカウント入力  
-   `$ oj login https://beta.atcoder.jp/`
-1. 全問インストールする設定にする  
-   `$ acc config default-task-choice all`
-1. テンプレート設定用フォルダ確認  
-   ``$ ls -l `acc config-dir` ``
-1. テンプレート設定のコピー  
-   ``$ cp -r ./config/. `acc config-dir` `` 
-1. テンプレート設定用フォルダ配下にコピーされていること確認  
-   ``$ ls -l `acc config-dir` ``
-1. デフォルトテンプレートの設定  
-   `$ acc config default-template cpp`
+- 手動手順
+   1. 以下のコマンドを実行し、AtCoderログイン設定  
+      `$ acc login`
+   1. 以下のコマンド実行し、再びAtCoderアカウント入力  
+      `$ oj login https://beta.atcoder.jp/`
+   1. 全問インストールする設定にする  
+      `$ acc config default-task-choice all`
+   1. テンプレート設定用フォルダ確認  
+      ``$ ls -l `acc config-dir` ``
+   1. テンプレート設定のコピー  
+      ``$ cp -r ./config/. `acc config-dir` `` 
+   1. テンプレート設定用フォルダ配下にコピーされていること確認  
+      ``$ ls -l `acc config-dir` ``
+   1. デフォルトテンプレートの設定  
+      `$ acc config default-template cpp`
+- 自動化手順
+   1. 事前にルートのディレクトリに .env ファイルを作成し以下内容を記述(右辺は適宜変更のこと)  
+      ```
+      ATCODER_USERNAME=your username
+      ATCODER_PASSWORD=your password
+      ```
+   1. VSCodeでコンテナ環境にリモート接続後、以下のコマンドを実行しスクリプトに実行権限付与  
+      `$ chmod +x ./init/*.sh`
+   1. 以下実行  
+      `./init/startup.sh`
+
 
 ## コンテスト参加時
 
