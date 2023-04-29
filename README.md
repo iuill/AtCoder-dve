@@ -47,7 +47,7 @@ ref:
 - https://qiita.com/gomatofu/items/1adae9b7cd79b0f8044f
 - https://qiita.com/YUM_3/items/6910b9d14ea544d643f3
 
-/workspaces/AtCoder-dve で作業
+/workspaces/atcoder_cpp で作業
 
 1. 以下のコマンドを実行し、AtCoderログイン設定  
    `$ add login`
@@ -68,7 +68,7 @@ ref:
 
 1. カレントディレクトリ移動  
    `$ cd contest`
-   - ディレクトリは /workspaces/AtCoder-dve/contest となる想定
+   - ディレクトリは /workspaces/atcoder_cpp/contest となる想定
 1. 問題の取得
    `$ acc new コンテストID`
    - 例: `$ acc new abc123`
